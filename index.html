@@ -71,12 +71,13 @@
     <p>
       Interested in working together or have any questions? Reach out!
     </p>
-    <form id="contact-form">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="email" id="email" placeholder="Your Email" required>
-      <textarea id="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
+<form id="contact-form" action="https://formspree.io/f/yourformid" method="POST">
+  <input type="text" name="name" id="name" placeholder="Your Name" required>
+  <input type="email" name="email" id="email" placeholder="Your Email" required>
+  <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+  <button type="submit">Send</button>
+</form>
+<div id="form-status"></div>
     <div id="form-status"></div>
   </section>
 
