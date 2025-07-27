@@ -1,17 +1,27 @@
-document.getElementById('contact-form').addEventListener('submit', function(e) {
+document.getElementById('contact-form').addEventListener('submit', async function(e) {
   e.preventDefault();
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
+  const form = e.target;
   const status = document.getElementById('form-status');
+  status.textContent = "Sending...";
 
-  if (!name || !email || !message) {
-    status.textContent = "Please fill out all fields.";
-    return;
+  const data = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      status.textContent = "Thank you! Your message has been sent.";
+      form.reset();
+    } else {
+      status.textContent = "Oops! There was a problem sending your message.";
+    }
+  } catch (err) {
+    status.textContent = "Oops! There was a problem sending your message.";
   }
-
-  // For demo: just show a confirmation. 
-  // To actually send, use a backend or a service like Formspree, EmailJS, etc.
-  status.textContent = "Thank you! Your message has been sent (demo only).";
-  this.reset();
 });
