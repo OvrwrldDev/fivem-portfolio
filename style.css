@@ -1,0 +1,167 @@
+:root {
+  --accent: #51a3a3;
+  --bg: #181e23;
+  --light-bg: #232b32;
+  --text: #f5f7fa;
+  --muted: #b5b7ba;
+  --radius: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--light-bg);
+  padding: 12px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 24px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: var(--accent);
+}
+
+section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 24px;
+  background: var(--light-bg);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 12px #1115  ;
+}
+
+h2 {
+  color: var(--accent);
+  margin-top: 0;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.project {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  background: var(--bg);
+  padding: 16px;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 8px #0004;
+}
+
+.project img {
+  width: 180px;
+  height: 110px;
+  background: #222;
+  border-radius: var(--radius);
+  object-fit: cover;
+  border: 2px solid var(--accent);
+}
+
+.project h3 {
+  margin: 0 0 8px 0;
+  color: var(--text);
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list li {
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+form#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+form#contact-form input,
+form#contact-form textarea {
+  padding: 10px;
+  border-radius: var(--radius);
+  border: none;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+form#contact-form button {
+  background: var(--accent);
+  color: #fff;
+  padding: 10px;
+  border-radius: var(--radius);
+  border: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+form#contact-form button:hover {
+  background: #3d8383;
+}
+
+#form-status {
+  margin-top: 8px;
+  color: var(--accent);
+  font-size: 1.02rem;
+}
+
+footer {
+  text-align: center;
+  padding: 18px 0;
+  background: var(--light-bg);
+  color: var(--muted);
+  font-size: .96rem;
+  margin-top: 40px;
+}
+
+@media (max-width: 700px) {
+  section {
+    margin: 20px 4px;
+    padding: 14px;
+  }
+  .project-list {
+    gap: 18px;
+  }
+  .project {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .project img {
+    width: 100%;
+    height: 120px;
+  }
+}
